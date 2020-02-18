@@ -4,7 +4,9 @@ import com.sum.my.shop.dao.UserDao;
 import com.sum.my.shop.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
+@Repository("userDao")
 public class UserDaoImpl implements UserDao {
 
     Logger LOG = LoggerFactory.getLogger(UserDaoImpl.class);

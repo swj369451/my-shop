@@ -4,23 +4,14 @@ import com.sum.my.shop.common.utils.SpringContext;
 import com.sum.my.shop.dao.UserDao;
 import com.sum.my.shop.entity.User;
 import com.sum.my.shop.service.UserService;
+import org.springframework.stereotype.Service;
 
+@Service("userService")
 public class UserServiceImpl implements UserService {
     private UserDao userDao = SpringContext.getBean("userDao");
 
     public User login(String email, String password) {
         return userDao.getUser(email, password);
     }
-
-
-//    如果将这俩句放在属性的位置会报错误
-//    SpringContext springContext = new SpringContext();
-//    UserDao userDao = (UserDao) springContext.getBean("userDao");
-
-//    public User login(String email, String password) {
-//        SpringContext springContext = new SpringContext();
-//        UserDao userDao = (UserDao) springContext.getBean("userDao");
-//        return userDao.getUser(email, password);
-//    }
 
 }
