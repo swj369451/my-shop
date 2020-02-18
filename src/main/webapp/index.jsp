@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">
@@ -28,19 +29,26 @@
     <div class="login-box-body">
         <p class="login-box-msg">登录后台管理系统</p>
         <form action="/login" method="post">
+            <c:if test="${message != null}">
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+                        ${message}
+                </div>
+            </c:if>
             <div class="form-group has-feedback">
-                <input type="email" name="email" class="form-control" placeholder="邮箱">
+                <input type="email" name="email" class="form-control" placeholder="邮箱" value="${sessionScope.email}">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" name="password" class="form-control" placeholder="密码">
+                <input type="password" name="password" class="form-control" placeholder="密码" value="${sessionScope.password}">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
                 <div class="col-xs-8">
                     <div class="checkbox icheck">
                         <label>
-                            <input type="checkbox"> 记住我
+                            <input type="checkbox" name="remember" value="remember"> 记住我
                         </label>
                     </div>
                 </div>

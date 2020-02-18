@@ -3,11 +3,13 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    <!--springContext 必须要放在首位-->
+    <bean id="springContext" class="com.sum.my.shop.common.utils.SpringContext"/>
     <!--dao-->
     <bean id="userDao" class="com.sum.my.shop.dao.impl.UserDaoImpl" />
 
     <!--service-->
     <bean id="userService" class="com.sum.my.shop.service.impl.UserServiceImpl" />
+
 
 </beans>
