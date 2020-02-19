@@ -1,6 +1,6 @@
 package com.sum.my.shop.service.impl;
 
-import com.sum.my.shop.common.utils.SpringContext;
+import com.sum.my.shop.common.context.SpringContext;
 import com.sum.my.shop.dao.UserDao;
 import com.sum.my.shop.entity.User;
 import com.sum.my.shop.service.UserService;
