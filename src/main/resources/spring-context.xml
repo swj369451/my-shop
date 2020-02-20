@@ -6,5 +6,7 @@
     <!--开启注解模式-->
     <content:annotation-config/>
     <!--配置扫描包的位置-->
-    <content:component-scan base-package="com.sum.my.shop"/>
+    <content:component-scan base-package="com.sum.my.shop">
+        <content:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </content:component-scan>
 </beans>

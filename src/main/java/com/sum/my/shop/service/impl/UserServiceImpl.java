@@ -6,7 +6,7 @@ import com.sum.my.shop.entity.User;
 import com.sum.my.shop.service.UserService;
 import org.springframework.stereotype.Service;
 
-@Service("userService")
+@Service
 public class UserServiceImpl implements UserService {
     private UserDao userDao = SpringContext.getBean("userDao");
 
